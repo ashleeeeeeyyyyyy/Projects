@@ -3,7 +3,7 @@ import { discount, robot, Ez, Ez2 } from "../assets";
 import { info } from "../constants";
 
 const About = () => (
-  <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
+  <section id="about" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
     <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
       <div className="flex flex-row justify-between items-center w-full">
         <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100px] leading-[75px]">
@@ -20,16 +20,22 @@ const About = () => (
         </h1>
       </div>
 
-      <div>
+      <div className="flex mt-10 items-center gap-7">
         {info.map((content) => (
           <div key={content.text}>
-            <h3 className="md:text-4xl text 2xl font-semibold text-white">
+            <h3 className="md:text-4xl text-2xl font-semibold text-white">
               {content.count}
+              <span className="text-cyan-600">+</span>{" "}
             </h3>
-            
-            <span className="text-cyan-600"> + </span>{" "}
+            <span className="xs:text-[18px] text-[10px] text-dimWhite font-semibold w-full">{content.text}</span>
           </div>
         ))}
+
+        <a href="../assets/Resume.pdf"> 
+            <button className={`py-3 px-6 bg-blue-gradient font-poppines font-medium text-[18px] text-primary outline-none ${styles} rounded-[10px]`}>
+                Download CV
+            </button>
+        </a>
       </div>
     </div>
 

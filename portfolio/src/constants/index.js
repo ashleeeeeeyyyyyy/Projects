@@ -6,7 +6,7 @@ export const navLinks = [
     title: "Home",
   },
   {
-    id: "About",
+    id: "about",
     title: "About",
   },
   {
@@ -26,7 +26,7 @@ export const info = [
   },
   {
     text: "Completed Projects",
-    count: "2",
+    count: "05",
   },
   {
     text: "Companies Work",
