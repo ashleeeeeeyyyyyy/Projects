@@ -1,10 +1,10 @@
-import styles from "../style";
-import { discount, robot, Ez, Ez2 } from "../assets";
+import styles, { layout } from "../style";
+import { Ez2 } from "../assets";
 import { info } from "../constants";
 
 const About = () => (
-  <section id="about" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
-    <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
+  <section id="about" className={layout.sectionReverse}>
+    <div className={layout.sectionInfo}>
       <div className="flex flex-row justify-between items-center w-full">
         <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100px] leading-[75px]">
           <span className="text-gradient"> About Me</span>{" "}
@@ -20,34 +20,29 @@ const About = () => (
         </h1>
       </div>
 
-      <div className="flex mt-10 items-center gap-7">
+      <div className={`flex-1 flex justify-start items-center flex-row m-3 gap-10`}>
         {info.map((content) => (
           <div key={content.text}>
-            <h3 className="md:text-4xl text-2xl font-semibold text-white">
-              {content.count}
-              <span className="text-cyan-600">+</span>{" "}
-            </h3>
-            <span className="xs:text-[18px] text-[10px] text-dimWhite font-semibold w-full">{content.text}</span>
+            <h4 className="font-poppins font-semibold xs:text-[40px] text-[30px] xs:leading-[53px] leading-[43px] text-white">{content.count}</h4>
+            <p className="font-poppins font-normal xs:text-[15px] text-[10px] xs:leading-[26px] leading-[21px] text-gradient uppercase">{content.text}</p>
           </div>
         ))}
+      </div><br />
+      
 
-        <a href="../assets/Resume.pdf"> 
-            <button className={`py-3 px-6 bg-blue-gradient font-poppines font-medium text-[18px] text-primary outline-none ${styles} rounded-[10px]`}>
-                Download CV
-            </button>
+      <div className={`${styles.flexCenter}`}>
+        <a href="./src/assets/Resume.pdf" download> 
+          <button className={`py-3 px-6 bg-blue-gradient font-poppins font-medium text-[20px] text-primary outline-none ${styles} rounded-[10px] w-full`}>
+              Download CV
+          </button>
         </a>
       </div>
-    </div>
+    </div><br/>
 
-    <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-      <img
-        src={Ez2}
-        alt="billing"
-        className="w-[100%} h-[100%] relative z-[5]"
-      />
-      <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
+    <div className={layout.sectionImgReverse}>
+      <img src={Ez2} className="w-[100%} h-[100%]"/>
       <div className="absolute z-[1] w-[80%] h-[8%] rounded-full bottom-40 white__gradient" />
-      <div className="absolute z-[0] w-[50%] h-[50%] left-10 bottom-20 blue__gradient" />
+      <div className="absolute z-[0] w-[50%] h-[50%] right-10 top-10 blue__gradient" />
     </div>
   </section>
 );

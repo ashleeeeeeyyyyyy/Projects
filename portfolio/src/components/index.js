@@ -1,11 +1,13 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Hero from "./Hero";
-import About from "./About.jsx";
+import About from "./About";
+import Skills from "./Skills";
 
 export {
   Navbar,
-  Footer,
   Hero,
   About,
+  Skills,
+  Footer,
 };

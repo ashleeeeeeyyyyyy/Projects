@@ -1,5 +1,3 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
-
 export const navLinks = [
   {
     id: "home",
@@ -22,37 +20,70 @@ export const navLinks = [
 export const info = [
   {
     text: "Years experience",
-    count: "04",
+    count: "2+",
   },
   {
     text: "Completed Projects",
-    count: "05",
+    count: "5+",
   },
   {
-    text: "Companies Work",
-    count: "04",
+    text: "Companies Worked For",
+    count: "4+",
+  },
+];
+
+export const skills = [
+  {
+    logo: "logo-html5",
+    name: "HTML5",
+    level: "Advanced",
+    count: 80
+  },
+  {
+    logo: "logo-css3",
+    name: "CSS3",
+    level: "Advanced",
+    count: 70
+  },
+  {
+    logo: "logo-javascript",
+    name: "JavaScript",
+    level: "Intermediate",
+    count: 50
+  },
+  {
+    logo: "logo-react",
+    name: "ReactJS",
+    level: "Intermediate",
+    count: 50
+  },
+  {
+    logo: "logo-wordpress",
+    name: "WordPress",
+    level: "Begginer",
+    count: 30
   },
 ];
 
 export const socialMedia = [
   {
     id: "social-media-1",
-    icon: instagram,
+    logo: "logo-instagram",
     link: "https://www.instagram.com/",
   },
   {
     id: "social-media-2",
-    icon: facebook,
+    logo: "logo-facebook",
     link: "https://www.facebook.com/",
   },
   {
     id: "social-media-3",
-    icon: twitter,
+    logo: "logo-twitter",
     link: "https://www.twitter.com/",
   },
   {
     id: "social-media-4",
-    icon: linkedin,
+    logo: "logo-linkedin",
     link: "https://www.linkedin.com/",
   },
 ];
