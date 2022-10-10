@@ -21,7 +21,7 @@ const Skills = () => {
               background: `conic-gradient(rgb(8,145,170) ${skills.count}%, #ddd ${skills.count}%)`
               }} 
               className='w-32 h-32 flex items-center justify-center rounded-full'>
-              <div className='text-6xl text-white w-28 h-28 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-yellow-300'>
+              <div className='text-6xl text-white w-28 h-28 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-yellow-300 sm:group-hover:text-yellow-300'>
                 <ion-icon name={skills.logo}></ion-icon>
               </div>
             </div>
