@@ -15,7 +15,7 @@ const Hero = () => {
           A girl group consisting of 9 members: 
           Jihyo, Nayeon, Jeongyeon, Momo, Sana, Mina, Dahyun, Chaeyoung, and Tzuyu.
         </p>
-        <button className='bg-cyan-300 w-[200px] font-medium my-6 mx-auto py-3 rounded-md text-black'>Get Started</button>
+        <button className='bg-cyan-300 w-[200px] font-medium my-6 mx-auto py-3 rounded-md text-black hover:bg-cyan-800'>Get Started</button>
       </div>
     </div>
   )
