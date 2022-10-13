@@ -6,11 +6,25 @@ import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <About />
-      <Footer />
+    <div className='bg-primary w-full overflow-hidden'>
+      <div className='flex justify-center items-center sm:px-16 px-6'>
+        <div className='xl:max-w-[1280px] w-full'>
+          <Navbar />
+        </div>
+      </div>
+      
+      <div className='flex justify-center items-start'>
+        <div className='xl:max-w-[1280px] w-full'>
+          <Hero />
+        </div>
+      </div>
+      
+      <div className='flex justify-center items-start sm:px-16 px-6'>
+        <div className='xl:max-w-[1280px] w-full'>
+          <About />
+          <Footer />
+        </div>
+      </div>
     </div>
   )
 }
