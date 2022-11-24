@@ -5,7 +5,7 @@ type Props = {}
 
 const ExperienceCard2 = (props: Props) => {
   return (
-    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 mt-[120px] w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-auto'>
+    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
       <motion.img
       initial={{ y: -100, opacity: 0 }}
       transition={{ duration: 1.2 }}
@@ -53,7 +53,7 @@ const ExperienceCard2 = (props: Props) => {
         </div>
         <p className='uppercase py-5 text-gray-300'>June 2019 - June 2022</p>
 
-        <ul className='list-disc space-y-2 ml-5 text-sm text-left'>
+        <ul className='list-disc space-y-4 ml-5 text-sm text-left'>
           <li>Created an INVENTORY SYSTEM using (ReactJS, CSS, MYSQL/PHPMyAdmin) implemented using Docker App via GIT Repository</li>
           <li>Created a PAYROLL SYSTEM (Microsoft Excel)</li>
           <li>Handles and oversees all business operations (INVENTORY, CUSTOMER RELATIONS, CASHIER, ACCOUNTING)</li>

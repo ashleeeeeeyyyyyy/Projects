@@ -5,7 +5,7 @@ type Props = {}
 
 const ExperienceCard3 = (props: Props) => {
   return (
-    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 mt-[120px] w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-auto'>
+    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
       <motion.img
       initial={{ y: -100, opacity: 0 }}
       transition={{ duration: 1.2 }}
@@ -53,7 +53,7 @@ const ExperienceCard3 = (props: Props) => {
         </div>
         <p className='uppercase py-5 text-gray-300'>2020</p>
 
-        <ul className='list-disc space-y-2 ml-5 text-sm text-left'>
+        <ul className='list-disc space-y-4 ml-5 text-sm text-left'>
           <li>Created a website for the client using (HTML, CSS, JavaScript)</li>
           <li>Modify and optimize plugins and assets</li>
           <li>Created and edited photos using Adobe Photoshop for Advertisement</li>
