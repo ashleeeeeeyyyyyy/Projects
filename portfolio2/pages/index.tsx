@@ -35,27 +35,27 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
 
       {/* Hero */}
       <section id="hero" className='snap-start'>
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
 
       {/* About */}
       <section id='about' className='snap-center'>
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
       
       {/* Experience */}
       <section id='experience' className='snap-center'>
-        <WorkExperience />
+        <WorkExperience experiences={experiences} />
       </section>
 
       {/* Skills */}
       <section id='skills' className='snap-start'>
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       {/* Projects */}
       <section id='projects' className='snap-start'>
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       {/* Contact Me */}
@@ -95,6 +95,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials,
     },
-    revalidate: 10,
+    revalidate: 5,
   }
 }

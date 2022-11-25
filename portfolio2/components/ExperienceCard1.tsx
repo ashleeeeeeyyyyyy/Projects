@@ -1,59 +1,45 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Experience } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+  experience: Experience
+}
 
-const ExperienceCard = (props: Props) => {
+const ExperienceCard = ( { experience }: Props) => {
   return (
-    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 mt-20 w-[500px] md:w-[600px] xl:w-[900px] snap-center
+     bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
       <motion.img
       initial={{ y: -100, opacity: 0 }}
       transition={{ duration: 1.2 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className='w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center'
-      src="https://media-exp1.licdn.com/dms/image/C4E0BAQHza023WntP0w/company-logo_200_200/0/1613418361800?e=1677110400&v=beta&t=9cwE6q9TU7UAMy7T3hWvGewfgBHGia2BuX_GBuwPn70"
+      className='w-24 h-24 rounded-full md:h-[70px] md:w-[70px] xl:w-[100px] xl:h-[100px] object-cover object-center'
+      src={urlFor(experience?.companyImage).url()}
       alt=""
       />
 
       <div className='px-0 md:px-10'>
-        <h4 className='text-3xl font-light'>ServingIntel</h4>
+        <h4 className='text-3xl font-light'>{experience?.jobTitle}</h4>
         <p className='font-bold text-1xl mt-2'>Web Developer</p>
         <div className='flex space-x-2 my-2'>
-          <img
-            className='h-10 w-10 rounded-full'
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3YraeeRnBhf1Sd-QQndtiCYLL5RTFWDhvjcooa9c8NqWeU6D0vP3x-3l1bfX5vskcToE&usqp=CAU" 
-            alt=""
-          />
-          <img
-            className='h-10 w-10 rounded-full'
-            src="https://www.citypng.com/public/uploads/preview/js-javascript-round-logo-icon-png-11662226392lsrrajcm0y.png" 
-            alt=""
-          />
-          <img
-            className='h-10 w-10 rounded-full'
-            src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" 
-            alt=""
-          />
-          <img
-            className='h-10 w-10 rounded-full'
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" 
-            alt=""
-          />
-          <img
-            className='h-10 w-10 rounded-full'
-            src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
-            alt=""
-          />
+          {experience.technologies.map((technology) => (
+            <img
+              key={technology._id}
+              className='h-10 w-10 rounded-full'
+              src={urlFor(technology.image).url()}
+              alt=""
+            />
+          ))}
         </div>
         <p className='uppercase py-5 text-gray-300'>April 2022 - June 2022</p>
 
-        <ul className='list-disc space-y-4 ml-5 text-sm text-left'>
-          <li>Managed and maintained company websites</li>
-          <li>Build and developed front end components</li>
-          <li>Participated in daily scrum meetings and user acceptance testing</li>
-          <li>Provided insights into UI/UX</li>
-          <li>Developed re-usable codes</li>
+        <ul className='list-disc space-y-4 ml-5 text-sm max-h-72 pr-5 overflow-y-scroll scrollbar-thin scrollbar-thumb-[#0080FF]/80'>
+         {experience.points.map((point, i) => (
+          <li key={i}>{point}</li>
+         ))}
         </ul>
       </div>
     </article>

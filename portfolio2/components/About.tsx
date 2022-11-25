@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { PageInfo } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,25 +21,18 @@ function About({}: Props) {
       transition={{ duration: 1.2 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/274022945_5150128001666821_86231417556620028_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFpTxWEtx9BiVnyI1rgDQ1pVhb23-zv5lZWFvbf7O_mVlVI3_tjbd64ge_n7jdKWwrIxnvhbtT2aU7qwb8TjFLO&_nc_ohc=I7cqTHqr78IAX_-fOKV&_nc_ht=scontent.fmnl25-4.fna&oh=00_AfCfrEHAnXBOXOBvTooJMv6XvaZbHwyVLPVTKeAY-5-g5Q&oe=63821206"
-      className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
+      src={urlFor(pageInfo?.profilePic).url()}
+      className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 mt-5 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[400px] xl:h-[500px]'
       />
 
       <div className='space-y-10 px-0 md:px-10'>
         <h4 className='text-3xl font-semibold uppercase'>
           Here is a  {" "}
-          <span className='underline decoration-[#0080FF]/50'>little</span> {" "}
+          <span className='underline decoration-[#0080FF]/80'>little</span> {" "}
           background
         </h4>
         <p className='text-base'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-          when an unknown printer took a galley of type and scrambled it to make a type 
-          specimen book. It has survived not only five centuries, but also the leap into 
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 
-          1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-          recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>
