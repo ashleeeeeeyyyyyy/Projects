@@ -2,6 +2,7 @@ import React from 'react'
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import { Social } from '../typings';
+import Link from 'next/link';
 
 type Props = {
   socials: Social[];
@@ -28,10 +29,11 @@ function Header({ socials }: Props) {
 
         {/* Social Icons*/}
         {socials.map((social) => (
-          <SocialIcon 
+          <SocialIcon
+          className='mr-1'
           key={social._id}
           url={social.url}
-          fgColor="gray" 
+          fgColor="black" 
           bgColor="transparent"
         />
         ))}
@@ -55,10 +57,12 @@ function Header({ socials }: Props) {
         <SocialIcon
           className="cursor-pointer"
           network="email"
-          fgColor="gray" 
+          fgColor="black" 
           bgColor="transparent"
         />
-        <p className='uppercase hidden md:inline-flex text-sm text-gray-400'>Get in Touch</p>
+        <Link href="#contactMe">
+          <p className='uppercase hidden md:inline-flex text-sm font-semibold text-black'>Get in Touch</p>
+        </Link>
       </motion.div>
     </header>
   )
