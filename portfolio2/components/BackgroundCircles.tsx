@@ -23,7 +23,7 @@ function BackgroundCircles({}: Props) {
       {/* <div className='border border-[#333333] rounded-full h-[200px] w-[200px] absolute mt-52'/> */}
       {/* <div className='border border-[#333333] rounded-full h-[300px] w-[300px] absolute mt-52' /> */}
       {/* <div className='border border-[#333333] rounded-full h-[500px] w-[500px] absolute mt-52' /> */}
-      <div className='border border-[#0080FF] rounded-full h-[300px] w-[300px] absolute mt-52 animate-ping'/>
+      <div className='border border-[#0080FF] rounded-full h-[150px] w-[150px] md:h-[200px] md:w-[200px] absolute mt-52 animate-ping'/>
       {/* <div className='border border-[#333333] rounded-full h-[600px] w-[600px] absolute mt-52'/> */}
     </motion.div>
   )
