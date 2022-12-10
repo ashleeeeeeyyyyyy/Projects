@@ -4,6 +4,7 @@ import NewsList from './NewsList';
 
 async function Homepage() {
   const news: NewsResponse = await fetchNews(categories.join(','));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <div>
